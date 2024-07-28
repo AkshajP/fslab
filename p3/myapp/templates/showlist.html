@@ -1,0 +1,28 @@
+<html>
+  <style type="text/css">
+    #i1 {
+      background-color: lightgoldenrodyellow;
+      color: brown;
+      display: table;
+    }
+    #i2 {
+      background-color: black;
+      color: cyan;
+      display: table;
+    }
+  </style>
+  <body>
+    <h1 id="i1">Unordered list of fruits</h1>
+    <ul>
+      {%for fruit in fruits%}
+      <li>{{ fruit }}</li>
+      {%endfor%}
+    </ul>
+    <h1 id="i2">Ordered list of students</h1>
+    <ol>
+      {%for student in students%}
+      <li>{{ student }}</li>
+      {%endfor%}
+    </ol>
+  </body>
+</html>

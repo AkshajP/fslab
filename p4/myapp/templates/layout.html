@@ -1,0 +1,20 @@
+<html>
+  <title>{% block title %} {% endblock %}</title>
+  <style type="text/css">
+    nav {
+      background-color: lightblue;
+      padding: 10px;
+    }
+  </style>
+  <body>
+    <nav>
+      <a href="{% url 'home' %}">Home</a>| <a href="{% url 'about_us' %}">About Us</a>|
+      <a href="{% url 'contact_us' %}">Contact Us</a>|
+    </nav>
+    <section>{% block content %} {% endblock %}</section>
+    <footer>
+      <hr />
+      &copy; CSE, Developed by CSE RVITM.
+    </footer>
+  </body>
+</html>

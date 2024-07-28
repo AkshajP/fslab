@@ -1,0 +1,24 @@
+{% include 'base.html' %}
+{% block content %}
+<div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md mt-10 w-1/2">
+    <h1 class="text-2xl font-bold text-center">Enrollment Form</h1>
+    <form method="post" action="" class="space-y-4"> 
+        {% csrf_token %} 
+        <label for="sname" class="block text-sm font-medium text-blue-400">Student Name</label>
+        <select name="sname"
+        class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm"> 
+        {% for student in students %} 
+        <option value="{{ student.id }}">{{ student.student_name }}</option> 
+        {% endfor %} 
+        </select><br> 
+        <label for="cname" class="block text-sm font-medium text-blue-400">Course Name</label>       
+        <select name="cname"
+        class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm"> 
+        {% for course in courses %} 
+        <option value="{{ course.id }}">{{ course.course_name }}</option> 
+        {% endfor %} 
+        </select><br> 
+        <input type="submit" value="Enroll" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"> 
+    </form> 
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course List</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<p1>{{message}}</p1>
+<h1>Course List</h1>
+<ul>
+    {% for course in courses %}
+<li>
+<h2>{{ course.name }}</h2>
+<p>Instructor: {{ course.instructor }}</p>
+<a href="{% url 'register_student' course.id %}">Register</a>
+</li>
+{% endfor %}
+</ul>
+</body>
+</html>
